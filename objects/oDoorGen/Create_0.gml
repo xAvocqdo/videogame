@@ -32,30 +32,53 @@ if(ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != 0 && ds_grid
 	right = false
 } else{right = true}
 
-show_debug_message("right: {0} ", [ds_grid_get(oGame.gridcopyt, global.playerx+1, global.playery)])
-show_debug_message("left: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx-1, global.playery)])
-show_debug_message("up: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx, global.playery-1)])
-show_debug_message("down: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx, global.playery+1)])
+highest_y = room_height
+lowest_y = -room_height
+left_x = room_width
+right_x = -room_width
+with(oWall)
+{
+	if(bbox_top < oDoorGen.highest_y)
+	{
+			oDoorGen.highest_y = bbox_top
+	}
+	if(bbox_bottom > oDoorGen.lowest_y)
+	{
+		oDoorGen.lowest_y = bbox_bottom-64
+	}
+	if(bbox_left < oDoorGen.left_x)
+	{
+		oDoorGen.left_x = bbox_left
+	}
+	if(bbox_right > oDoorGen.right_x)
+	{
+		oDoorGen.right_x = bbox_right-64
+	}
+}
+
+
+x=left_x
+y=highest_y
 
 
 if(ermup)
 {
-	show_debug_message("hiup")
-	for(i = 0; i < 999; i++)
+	x=left_x
+	y=highest_y
+	if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
 	{
-		if(place_free(x,y) = false && place_meeting(x,y, oTile))
+		instance_create_depth(x,highest_y,-1,oDoorUp)
+		up = true
+	} else{
+		for(i = 0; i < 999; i++)
 		{
-			y -= 64
-			show_debug_message("hiup")
-		}
-		if(place_meeting(x, y, oWall))
-		{
-			instance_create_depth(x, y, -1, oDoorUp)
-			show_debug_message("testgenup")
-			x=global.spawnx
-			y=global.spawny
-			up=true
-			break
+			x+=64
+			if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
+			{
+				instance_create_depth(x,highest_y,-1,oDoorUp)
+				up = true		
+				break
+			}
 		}
 	}
 }
@@ -63,67 +86,113 @@ if(ermup)
 // down
 if(ermdown)
 {
-	show_debug_message("down")
-	for(i = 0; i < 999; i++)
+	x=left_x
+	y=lowest_y
+
+	if(!place_free(x,lowest_y) && place_meeting(x,lowest_y-64,oTile))
 	{
-		if(place_free(x,y) = false && place_meeting(x,y, oTile))
+		instance_create_depth(x,lowest_y,-1,oDoorDown)
+		down = true
+	} else{
+		for(i = 0; i < 999; i++)
 		{
-			y += 64
-			show_debug_message("hidown")
+			x+=64
+			if(!place_free(x,lowest_y) && place_meeting(x,lowest_y-64,oTile))
+			{
+				instance_create_depth(x,lowest_y,-1,oDoorDown)
+				down = true		
+				break
+			}
 		}
-		if(place_meeting(x, y, oWall))
-		{
-			instance_create_depth(x, y, -1, oDoorDown)
-			x=global.spawnx
-			y=global.spawny
-			down=true
-			break
-		}
-	}
+	}	
 }
 // 
 
 if(ermleft)
 {
-	show_debug_message("left")
-	for(i = 0; i < 999; i++)
+	x=left_x
+	y=highest_y
+
+	if(!place_free(left_x,y) && place_meeting(left_x+64,y,oTile))
 	{
-		if(place_free(x,y) = false && place_meeting(x,y, oTile))
+		instance_create_depth(left_x,y,-1,oDoorLeft)
+		left = true
+	} else{
+		for(i = 0; i < 999; i++)
 		{
-			x -= 64
-			show_debug_message("hileft")
-		}
-		if(place_meeting(x, y, oWall))
-		{
-			instance_create_depth(x, y, -1, oDoorLeft)
-			x=global.spawnx
-			y=global.spawny
-			left=true
-			break
+			y+=64
+			if(!place_free(left_x,y) && place_meeting(left_x+64,y,oTile))
+			{
+				instance_create_depth(left_x,y,-1,oDoorLeft)
+				left = true		
+				break
+			}
 		}
 	}
 }
 // right
 if(ermright)
 {
-	show_debug_message("right")
-	for(i = 0; i < 999; i++)
+	x=right_x
+	y=highest_y
+
+	if(!place_free(right_x,y) && place_meeting(right_x-64,y,oTile))
 	{
-		if(place_free(x,y) = false && place_meeting(x,y, oTile))
+		instance_create_depth(right_x,y,-1,oDoorRight)
+		right = true
+	} else{
+		for(i = 0; i < 999; i++)
 		{
-			x += 64
-			show_debug_message("hiright")
-		}
-		if(place_meeting(x, y, oWall))
-		{
-			instance_create_depth(x, y, -1, oDoorRight)
-			x=global.spawnx
-			y=global.spawny
-			right=true
-			break
+			y+=64
+			if(!place_free(right_x,y) && place_meeting(right_x-64,y,oTile))
+			{
+				instance_create_depth(right_x,y,-1,oDoorRight)
+				right = true		
+				break
+			}
 		}
 	}
 }
+
+if(global.doorup)
+{
+	with(oDoorDown)
+	{
+		global.spawnx = x
+		global.spawny = y-64
+		global.doorup = false
+	}
+}
+if(global.doordown)
+{
+	with(oDoorUp)
+	{
+		global.spawnx = x
+		global.spawny = y+64
+		global.doordown = false
+	}
+}
+if(global.doorleft)
+{
+	with(oDoorRight)
+	{
+		global.spawnx = x-64
+		global.spawny = y
+		global.doorleft = false
+	}
+}
+if(global.doorright)
+{
+	with(oDoorLeft)
+	{
+		global.spawnx = x+64
+		global.spawny = y
+		global.doorright = false
+	}
+}
+
+obj_player.x = global.spawnx
+obj_player.y = global.spawny
 
 if(up && down && left && right)
 {

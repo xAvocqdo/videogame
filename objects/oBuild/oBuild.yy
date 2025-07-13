@@ -36,5 +36,5 @@
     "path":"sprites/sNull/sNull.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

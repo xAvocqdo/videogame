@@ -46,37 +46,8 @@ for (i = 0; i<999; i++) // place a tile then go random direction place new tile 
 		
 		}
 		
-		spawned = false
-		
-		if(position_meeting(global.spawnx, global.spawny, oWall) || place_empty(global.spawnx, global.spawny))
-		{
-			if(position_meeting(global.spawnx+64, global.spawny, oTile) && !spawned)
-			{
-				global.spawnx += 64 
-				spawned = true
-			}
-			if(position_meeting(global.spawnx-64, global.spawny, oTile) && !spawned)
-			{
-				global.spawnx -= 64
-				spawned = true
-			}
-			if(position_meeting(global.spawnx, global.spawny+64, oTile) && !spawned)
-			{
-				global.spawny += 64
-				spawned = true
-			}
-			if(position_meeting(global.spawnx, global.spawny-64, oTile) && !spawned)
-			{
-				global.spawny -= 64
-				spawned = true
-			}
-				
-		}
-		instance_create_depth(global.spawnx,global.spawny,-4096,oDoorGen)
-		spawned = true
+		instance_create_depth(x,y,-4096,oDoorGen)
 		instance_destroy() //destroys the oBuild tile
-		obj_player.x = global.spawnx		
-		obj_player.y = global.spawny
 		break // once it hits that, exit the loop. 
 	}
 }

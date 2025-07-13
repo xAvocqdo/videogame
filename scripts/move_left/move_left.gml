@@ -5,28 +5,28 @@ function move_left(){
 		x -= grid_unit_width
 	}
 	if(position_meeting(x,y, oDoorLeft)){
-		y -= grid_unit_width
+		x += grid_unit_width
 		global.doorleft = true
 		global.doorright = false
 		global.doorup = false
 		global.doordown = false
 	}
 	if(position_meeting(x,y, oDoorRight)){
-		y -= grid_unit_width
+		x += grid_unit_width
 		global.doorleft = false
 		global.doorright = true
 		global.doorup = false
 		global.doordown = false
 	}
 	if(position_meeting(x,y, oDoorUp)){
-		y -= grid_unit_width
+		x += grid_unit_width
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = true
 		global.doordown = false
 	}
 	if(position_meeting(x,y, oDoorDown)){
-		y -= grid_unit_width
+		x += grid_unit_width
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = false
