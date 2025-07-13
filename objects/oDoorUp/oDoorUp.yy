@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oDoor",
-  "eventList":[],
+  "%Name":"oDoorUp",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oDoor",
+  "name":"oDoorUp",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oDoorParent",
+    "path":"objects/oDoorParent/oDoorParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

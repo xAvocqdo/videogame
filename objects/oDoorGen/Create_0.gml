@@ -1,29 +1,44 @@
 /// @description Insert description here
 // You can write your code in this editor
+ermup = false
+ermleft = false
+ermright = false
+ermdown = false
+up = false
+down = false
+left = false
+right = false
 
-// up
-show_debug_message(global.doordown)
-show_debug_message(global.doorup)
-show_debug_message(global.doorleft)
-show_debug_message(global.doorright)
-if(!global.doordown)
-{
-	down = true
-} else {down=false}
-if(!global.doorup)
-{
-	up= true
-} else {up=false}
-if(!global.doorleft)
-{
-	left = true
-} else {left=false}
-if(!global.doorright)
-{
-	right = true
-} else {right=false}
 
-if(global.doorup)
+
+if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != undefined)
+{
+	ermup = true
+	up = false
+} else{up = true}
+if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery+1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery+1) != undefined)
+{
+	ermdown = true
+	down = false
+} else{down = true}
+if(ds_grid_get(oGame.gridcopyt, global.playerx-1,global.playery) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx-1,global.playery) != undefined)
+{
+	ermleft = true
+	left = false
+} else{left = true}
+if(ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != undefined)
+{
+	ermright = true
+	right = false
+} else{right = true}
+
+show_debug_message("right: {0} ", [ds_grid_get(oGame.gridcopyt, global.playerx+1, global.playery)])
+show_debug_message("left: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx-1, global.playery)])
+show_debug_message("up: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx, global.playery-1)])
+show_debug_message("down: {0}", [ds_grid_get(oGame.gridcopyt, global.playerx, global.playery+1)])
+
+
+if(ermup)
 {
 	show_debug_message("hiup")
 	for(i = 0; i < 999; i++)
@@ -35,8 +50,8 @@ if(global.doorup)
 		}
 		if(place_meeting(x, y, oWall))
 		{
-			instance_create_depth(x, y, -1, oDoor)
-			show_debug_message("testgen")
+			instance_create_depth(x, y, -1, oDoorUp)
+			show_debug_message("testgenup")
 			x=global.spawnx
 			y=global.spawny
 			up=true
@@ -46,8 +61,9 @@ if(global.doorup)
 }
 
 // down
-if(global.doordown)
+if(ermdown)
 {
+	show_debug_message("down")
 	for(i = 0; i < 999; i++)
 	{
 		if(place_free(x,y) = false && place_meeting(x,y, oTile))
@@ -57,7 +73,7 @@ if(global.doordown)
 		}
 		if(place_meeting(x, y, oWall))
 		{
-			instance_create_depth(x, y, -1, oDoor)
+			instance_create_depth(x, y, -1, oDoorDown)
 			x=global.spawnx
 			y=global.spawny
 			down=true
@@ -67,8 +83,9 @@ if(global.doordown)
 }
 // 
 
-if(global.doorleft = true)
+if(ermleft)
 {
+	show_debug_message("left")
 	for(i = 0; i < 999; i++)
 	{
 		if(place_free(x,y) = false && place_meeting(x,y, oTile))
@@ -78,7 +95,7 @@ if(global.doorleft = true)
 		}
 		if(place_meeting(x, y, oWall))
 		{
-			instance_create_depth(x, y, -1, oDoor)
+			instance_create_depth(x, y, -1, oDoorLeft)
 			x=global.spawnx
 			y=global.spawny
 			left=true
@@ -87,8 +104,9 @@ if(global.doorleft = true)
 	}
 }
 // right
-if(global.doorright = true)
+if(ermright)
 {
+	show_debug_message("right")
 	for(i = 0; i < 999; i++)
 	{
 		if(place_free(x,y) = false && place_meeting(x,y, oTile))
@@ -98,7 +116,7 @@ if(global.doorright = true)
 		}
 		if(place_meeting(x, y, oWall))
 		{
-			instance_create_depth(x, y, -1, oDoor)
+			instance_create_depth(x, y, -1, oDoorRight)
 			x=global.spawnx
 			y=global.spawny
 			right=true

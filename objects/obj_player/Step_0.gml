@@ -58,3 +58,4 @@ camera_set_view_speed(view_camera[0], 0.5, 0.5);
 
 var playerX = x
 var playerY = y
+

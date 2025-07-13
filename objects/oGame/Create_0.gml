@@ -2,10 +2,16 @@
 // You can write your code in this editor
 randomize()
 seed = random_get_seed()
-
+global.doordown = false
+global.doorup = false
+global.doorleft = false
+global.doorright = false
+global.gendone = false
 roomrange = irandom_range(20, 30)
 global.spawnx = 640
 global.spawny = 352
+global.spawnxs = 640
+global.spawnys = 352
 grid = ds_grid_create(7,15)
 gridcopy = ds_grid_create(7,15)
 gridcopyt = ds_grid_create(7,15)
