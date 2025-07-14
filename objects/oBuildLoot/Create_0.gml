@@ -1,7 +1,7 @@
 /// @description building the map
 randomize() // randomize the seed of the engine so its not the same pattern every time
 width=sprite_get_width(sFloor) // 64 rn  
-rSize = irandom_range(36, oGame.rooms[1].size)
+rSize = irandom_range(24, oGame.rooms[3].size)
 
 
 for (i = 0; i<999; i++) // place a tile then go random direction place new tile 60 times.

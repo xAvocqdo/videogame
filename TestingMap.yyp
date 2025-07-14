@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"TestingMap",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -26,11 +26,12 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"TestingMap",
   "resources":[
@@ -38,6 +39,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"oBoss","path":"objects/oBoss/oBoss.yy",},},
     {"id":{"name":"oBuild","path":"objects/oBuild/oBuild.yy",},},
+    {"id":{"name":"oBuildLoot","path":"objects/oBuildLoot/oBuildLoot.yy",},},
     {"id":{"name":"oButton_Spawner","path":"objects/oButton_Spawner/oButton_Spawner.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},
     {"id":{"name":"oCommand","path":"objects/oCommand/oCommand.yy",},},
@@ -57,6 +59,7 @@
     {"id":{"name":"oTile","path":"objects/oTile/oTile.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"rm_base","path":"rooms/rm_base/rm_base.yy",},},
+    {"id":{"name":"rm_loot","path":"rooms/rm_loot/rm_loot.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
@@ -90,6 +93,7 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"roomId":{"name":"rm_base","path":"rooms/rm_base/rm_base.yy",},},
+    {"roomId":{"name":"rm_loot","path":"rooms/rm_loot/rm_loot.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

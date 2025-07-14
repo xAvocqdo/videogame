@@ -10,7 +10,7 @@ left = false
 right = false
 
 
-
+// determine what doors need to be made
 if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != undefined)
 {
 	ermup = true
@@ -32,6 +32,7 @@ if(ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != 0 && ds_grid
 	right = false
 } else{right = true}
 
+// find highest lowest leftest and rightest walls
 highest_y = room_height
 lowest_y = -room_height
 left_x = room_width
@@ -55,27 +56,26 @@ with(oWall)
 		oDoorGen.right_x = bbox_right-64
 	}
 }
-
-
 x=left_x
 y=highest_y
 
-
+//Generate up door
 if(ermup)
 {
 	x=left_x
 	y=highest_y
+	 // check if gen is on a tile and if theres a path tile beneath it
 	if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
 	{
 		instance_create_depth(x,highest_y,-1,oDoorUp)
 		up = true
 	} else{
-		for(i = 0; i < 999; i++)
+		for(i = 0; i < 999; i++) // loop until previous condition is met
 		{
 			x+=64
 			if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
 			{
-				instance_create_depth(x,highest_y,-1,oDoorUp)
+				instance_create_depth(x,highest_y,-1,oDoorUp) //door gets generated
 				up = true		
 				break
 			}
@@ -83,7 +83,7 @@ if(ermup)
 	}
 }
 
-// down
+// generate down door
 if(ermdown)
 {
 	x=left_x
@@ -106,8 +106,8 @@ if(ermdown)
 		}
 	}	
 }
-// 
-
+ 
+// generate left door
 if(ermleft)
 {
 	x=left_x
@@ -130,7 +130,7 @@ if(ermleft)
 		}
 	}
 }
-// right
+// generate right door
 if(ermright)
 {
 	x=right_x
@@ -153,7 +153,7 @@ if(ermright)
 		}
 	}
 }
-
+// player spawn location based on the location you came from
 if(global.doorup)
 {
 	with(oDoorDown)
@@ -194,6 +194,7 @@ if(global.doorright)
 obj_player.x = global.spawnx
 obj_player.y = global.spawny
 
+// delete doorgen after all doors in a room are made
 if(up && down && left && right)
 {
 	instance_destroy()
