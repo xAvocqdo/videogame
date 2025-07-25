@@ -10,7 +10,6 @@ global.gendone = false
 roomrange = irandom_range(20, 30)
 global.spawnx = undefined
 global.spawny = undefined
-
 grid = ds_grid_create(7,15)
 gridcopy = ds_grid_create(7,15)
 gridcopyt = ds_grid_create(7,15)

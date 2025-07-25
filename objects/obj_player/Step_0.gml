@@ -4,6 +4,7 @@ var _xinput = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var _yinput = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall);
 */
+
 if(global.rName == "Room1")
 {
 	visible = false
@@ -17,9 +18,11 @@ else
 
 if (keyboard_check(ord("W")))
 {
-	input = move_up
-	if(alarm[0] == -1)
-	{alarm [0] = 1}
+    input = move_up
+    if(alarm[0] == -1)
+	    {alarm [0] = 1}
+    
+
 	
 }
 if (keyboard_check(ord("A")))
@@ -56,6 +59,4 @@ if (!keyboard_check(ord("W")) && !keyboard_check(ord("A")) && !keyboard_check(or
 camera_set_view_speed(view_camera[0], 0.5, 0.5);
 
 
-var playerX = x
-var playerY = y
 

@@ -20,6 +20,7 @@ function move_up(){
 	}
 	if(position_meeting(x,y, oDoorUp)){
 		y += grid_unit_width
+        show_debug_message("test")
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = true

@@ -9,7 +9,6 @@ down = false
 left = false
 right = false
 
-
 // determine what doors need to be made
 if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != undefined)
 {
@@ -161,6 +160,7 @@ if(global.doorup)
 		global.spawnx = x
 		global.spawny = y-64
 		global.doorup = false
+        show_debug_message("testdoordown")
 	}
 }
 if(global.doordown)
@@ -170,6 +170,8 @@ if(global.doordown)
 		global.spawnx = x
 		global.spawny = y+64
 		global.doordown = false
+        show_debug_message("testdoorup")
+        
 	}
 }
 if(global.doorleft)
@@ -197,5 +199,6 @@ obj_player.y = global.spawny
 // delete doorgen after all doors in a room are made
 if(up && down && left && right)
 {
+    global.doorgen = true
 	instance_destroy()
 }

@@ -102,7 +102,6 @@ if(global.rName = "Room1")
 		}
 	}
 
-	//show_debug_message(global.gendone)
 	
 	if(!thingy) 
 	{
@@ -110,7 +109,6 @@ if(global.rName = "Room1")
 		{
 			repeat(6)
 			{
-	//			show_debug_message("Hi Lisa")
 				switch_draw()
 				check_row()
 				if(gridx >= 6)
@@ -122,7 +120,6 @@ if(global.rName = "Room1")
 			}
 			gridx = 0
 			gridy -= 1
-			//show_debug_message(gridy)
 			posx = 0
 			posy -= 128
 		}
@@ -132,7 +129,6 @@ if(global.rName = "Room1")
 
 
 
-//show_debug_message(ds_grid_get(grid,3,14))
 
 
 

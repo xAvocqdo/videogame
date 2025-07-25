@@ -4,6 +4,7 @@
 if(global.doordown)
 {
 	global.playery +=1
+    show_debug_message(global.playery)
 
 	if(ds_grid_get(oGame.grid, global.playerx, global.playery) != "start"){
 		room_goto(asset_get_index(ds_grid_get(oGame.grid, global.playerx, global.playery)))
