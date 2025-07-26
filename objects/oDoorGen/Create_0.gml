@@ -153,7 +153,7 @@ if(ermright)
 	}
 }
 // player spawn location based on the location you came from
-if(global.doorup)
+if(global.doorup2)
 {
 	with(oDoorDown)
 	{
@@ -163,7 +163,7 @@ if(global.doorup)
         show_debug_message("testdoordown")
 	}
 }
-if(global.doordown)
+if(global.doordown2)
 {
 	with(oDoorUp)
 	{
@@ -174,7 +174,7 @@ if(global.doordown)
         
 	}
 }
-if(global.doorleft)
+if(global.doorleft2)
 {
 	with(oDoorRight)
 	{
@@ -183,7 +183,7 @@ if(global.doorleft)
 		global.doorleft = false
 	}
 }
-if(global.doorright)
+if(global.doorright2)
 {
 	with(oDoorLeft)
 	{

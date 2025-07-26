@@ -10,6 +10,10 @@ function move_left(){
 		global.doorright = false
 		global.doorup = false
 		global.doordown = false
+		global.doorleft2 = true
+		global.doorright2 = false
+		global.doorup2 = false
+		global.doordown2 = false
 	}
 	if(position_meeting(x,y, oDoorRight)){
 		x += grid_unit_width
@@ -17,6 +21,11 @@ function move_left(){
 		global.doorright = true
 		global.doorup = false
 		global.doordown = false
+		global.doorleft2 = false
+		global.doorright2 = true
+		global.doorup2 = false
+		global.doordown2 = false
+
 	}
 	if(position_meeting(x,y, oDoorUp)){
 		x += grid_unit_width
@@ -24,6 +33,10 @@ function move_left(){
 		global.doorright = false
 		global.doorup = true
 		global.doordown = false
+		global.doorleft2 = false
+		global.doorright2 = false
+		global.doorup2 = true
+		global.doordown2 = false
 	}
 	if(position_meeting(x,y, oDoorDown)){
 		x += grid_unit_width
@@ -31,5 +44,10 @@ function move_left(){
 		global.doorright = false
 		global.doorup = false
 		global.doordown = true
+		global.doorleft2 = false
+		global.doorright2 = false
+		global.doorup2 = false
+		global.doordown2 = true
+
 	}
 }

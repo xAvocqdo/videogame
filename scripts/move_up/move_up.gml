@@ -10,6 +10,10 @@ function move_up(){
 		global.doorright = false
 		global.doorup = false
 		global.doordown = false
+		global.doorleft2 = true
+		global.doorright2 = false
+		global.doorup2 = false
+		global.doordown2 = false
 	}
 	if(position_meeting(x,y, oDoorRight)){
 		y += grid_unit_width
@@ -17,14 +21,22 @@ function move_up(){
 		global.doorright = true
 		global.doorup = false
 		global.doordown = false
+		global.doorleft2 = false
+		global.doorright2 = true
+		global.doorup2 = false
+		global.doordown2 = false
+
 	}
 	if(position_meeting(x,y, oDoorUp)){
 		y += grid_unit_width
-        show_debug_message("test")
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = true
 		global.doordown = false
+		global.doorleft2 = false
+		global.doorright2 = false
+		global.doorup2 = true
+		global.doordown2 = false
 	}
 	if(position_meeting(x,y, oDoorDown)){
 		y += grid_unit_width
@@ -32,5 +44,10 @@ function move_up(){
 		global.doorright = false
 		global.doorup = false
 		global.doordown = true
+		global.doorleft2 = false
+		global.doorright2 = false
+		global.doorup2 = false
+		global.doordown2 = true
+
 	}
 }
