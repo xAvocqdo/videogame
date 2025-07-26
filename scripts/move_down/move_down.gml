@@ -6,6 +6,7 @@ function move_down(){
 	} 
 	if(position_meeting(x,y, oDoorLeft)){
 		y -= grid_unit_width
+		obj_player_indicator.x -= 128
 		global.doorleft = true
 		global.doorright = false
 		global.doorup = false
@@ -17,6 +18,7 @@ function move_down(){
 	}
 	if(position_meeting(x,y, oDoorRight)){
 		y -= grid_unit_width
+		obj_player_indicator.x += 128
 		global.doorleft = false
 		global.doorright = true
 		global.doorup = false
@@ -29,6 +31,7 @@ function move_down(){
 	}
 	if(position_meeting(x,y, oDoorUp)){
 		y -= grid_unit_width
+		obj_player_indicator.y -=128
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = true
@@ -40,6 +43,7 @@ function move_down(){
 	}
 	if(position_meeting(x,y, oDoorDown)){
 		y -= grid_unit_width
+		obj_player_indicator.y += 128
 		global.doorleft = false
 		global.doorright = false
 		global.doorup = false

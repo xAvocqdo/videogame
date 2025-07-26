@@ -36,6 +36,7 @@
   "name":"TestingMap",
   "resources":[
     {"id":{"name":"oBase","path":"objects/oBase/oBase.yy",},},
+    {"id":{"name":"obj_player_indicator","path":"objects/obj_player_indicator/obj_player_indicator.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"oBoss","path":"objects/oBoss/oBoss.yy",},},
     {"id":{"name":"oBuild","path":"objects/oBuild/oBuild.yy",},},
@@ -76,6 +77,7 @@
     {"id":{"name":"sBossRoom","path":"sprites/sBossRoom/sBossRoom.yy",},},
     {"id":{"name":"sDoubleRoom","path":"sprites/sDoubleRoom/sDoubleRoom.yy",},},
     {"id":{"name":"sFloor","path":"sprites/sFloor/sFloor.yy",},},
+    {"id":{"name":"sIndicator","path":"sprites/sIndicator/sIndicator.yy",},},
     {"id":{"name":"sLootRoom","path":"sprites/sLootRoom/sLootRoom.yy",},},
     {"id":{"name":"sNull","path":"sprites/sNull/sNull.yy",},},
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
