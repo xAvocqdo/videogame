@@ -43,6 +43,7 @@
     {"id":{"name":"oBuildLoot","path":"objects/oBuildLoot/oBuildLoot.yy",},},
     {"id":{"name":"oButton_Spawner","path":"objects/oButton_Spawner/oButton_Spawner.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},
+    {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCommand","path":"objects/oCommand/oCommand.yy",},},
     {"id":{"name":"oDoorDown","path":"objects/oDoorDown/oDoorDown.yy",},},
     {"id":{"name":"oDoorGen","path":"objects/oDoorGen/oDoorGen.yy",},},

@@ -31,7 +31,17 @@ setroom = undefined
 thingy = false
 gw= ds_grid_width(grid);
 gh= ds_grid_height(grid);
-
+player_indicator = 
+{
+	x : 0,
+	y : 468
+}
+player = 
+{
+	x : 672,
+	y : 320,
+	hp : 10
+}
 count = 0
 rooms = 
 [

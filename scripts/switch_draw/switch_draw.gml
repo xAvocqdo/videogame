@@ -11,6 +11,8 @@ function switch_draw()
 			case "start":
 				instance_create_depth(posx, posy, 0, oStart)
 				instance_create_depth(posx,posy, -1, obj_player_indicator)
+				player_indicator.x = posx
+				player_indicator.y = posy
 			break
 			
 			case "standard":

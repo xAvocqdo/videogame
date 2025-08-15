@@ -8,5 +8,9 @@ if(global.doorleft)
 
 	if(ds_grid_get(oGame.grid, global.playerx, global.playery) != "start"){
 		room_goto(asset_get_index(ds_grid_get(oGame.grid, global.playerx, global.playery)))
-	} else{room_goto(rm_start)}
+	} else 
+	{
+		room_goto(rm_start)
+
+	}
 }

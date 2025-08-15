@@ -193,8 +193,8 @@ if(global.doorright2)
 	}
 }
 
-obj_player.x = global.spawnx
-obj_player.y = global.spawny
+oGame.player.x = global.spawnx
+oGame.player.y = global.spawny
 
 // delete doorgen after all doors in a room are made
 if(up && down && left && right)

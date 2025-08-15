@@ -8,9 +8,3 @@ if(global.rName = "Room1")
 	//vGrid(gridcopy,800,16) // object indification 
 }
 
-if(global.rName == "rm_base")
-{
-	draw_text(0,0,obj_player.x)
-	draw_text(0,20,obj_player.y)
-	
-}
