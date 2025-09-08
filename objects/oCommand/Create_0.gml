@@ -2,7 +2,10 @@
 // You can write your code in this editor
 inF = false
 saved_seed = oGame.seed
+inmap = false
 global.current_room = undefined
+global.generated = false
+global.donegen = false
 global.doorids = 
 {
 	doorup: undefined,

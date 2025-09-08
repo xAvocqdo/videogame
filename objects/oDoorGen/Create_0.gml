@@ -13,21 +13,25 @@ right = false
 if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery-1) != undefined)
 {
 	ermup = true
+	oCommand.doorlocations.doorup.exists = true
 	up = false
 } else{up = true}
 if(ds_grid_get(oGame.gridcopyt, global.playerx,global.playery+1) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx,global.playery+1) != undefined)
 {
 	ermdown = true
+	oCommand.doorlocations.doordown.exists = true
 	down = false
 } else{down = true}
 if(ds_grid_get(oGame.gridcopyt, global.playerx-1,global.playery) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx-1,global.playery) != undefined)
 {
 	ermleft = true
+	oCommand.doorlocations.doorleft.exists = true
 	left = false
 } else{left = true}
 if(ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != 0 && ds_grid_get(oGame.gridcopyt, global.playerx+1,global.playery) != undefined)
 {
 	ermright = true
+	oCommand.doorlocations.doorright.exists = true
 	right = false
 } else{right = true}
 
@@ -200,6 +204,7 @@ oGame.player.y = global.spawny
 // delete doorgen after all doors in a room are made
 if(up && down && left && right)
 {
+	global.generated = true
     global.doorgen = true
 	instance_destroy()
 }

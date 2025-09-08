@@ -2,6 +2,7 @@
 
 if(global.rName != "Room1")
 {
+	inmap = true
 	global.current_room = global.rName
 	oGame.player.x = obj_player.x
 	oGame.player.y = obj_player.y

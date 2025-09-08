@@ -150,7 +150,7 @@ if(keyboard_check_pressed(ord("L")))
 {
 //	room_goto(test)	
 }
-
+/*
 if(global.rName = "__newroom1")
 {
 	//show_debug_message("Hi Lisa")
@@ -161,6 +161,7 @@ if(global.rName = "__newroom1")
 		gen = true
 	}
 }
+*/
 
 
 
