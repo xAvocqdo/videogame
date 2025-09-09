@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 // using doorids, fill in doorlocation x y if it exists (CHANGE EXISTS IN DOORGEN)
-if(!inmap)
+if(!global.inmap)
 {
 	if(global.rName != "Room1" && global.rName != "rm_menu") {
 		if(generated && !donegen)
@@ -27,6 +27,7 @@ if(!inmap)
 				doorlocations.doorright.y = doorids.doorright.y
 			}
 			donegen = true
+			show_debug_message("moredonegentesting")
 		}
 	}
 } 

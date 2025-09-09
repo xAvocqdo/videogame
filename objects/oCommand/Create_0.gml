@@ -2,7 +2,7 @@
 // You can write your code in this editor
 inF = false
 saved_seed = oGame.seed
-inmap = false
+global.inmap = false
 global.current_room = undefined
 generated = false
 donegen = false

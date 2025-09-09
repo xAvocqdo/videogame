@@ -1,4 +1,4 @@
-if(!oCommand.inmap)
+if(!global.inmap)
 {
 	if(oCommand.donegen)
 	{
@@ -29,4 +29,4 @@ if(!oCommand.inmap)
 		x = oGame.player.x
 		y = oGame.player.y
 	}
-} else {oCommand.inmap = true}
+} 
