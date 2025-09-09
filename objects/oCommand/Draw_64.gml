@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+/*
 if(donegen)
 {
 	draw_text(30,20, "donegen: true")
@@ -19,3 +19,4 @@ if(global.inmap)
 } else {
 	draw_text(30,60, "inmap: false")
 }
+*/ 
