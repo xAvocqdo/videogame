@@ -31,6 +31,14 @@ setroom = undefined
 thingy = false
 gw= ds_grid_width(grid);
 gh= ds_grid_height(grid);
+global.doorleft = false
+global.doorright = false
+global.doorup = false
+global.doordown = false
+global.doorleft2 = false
+global.doorright2 = false
+global.doorup2 = false
+global.doordown2 = false
 player_indicator = 
 {
 	x : 0,

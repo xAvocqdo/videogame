@@ -1,7 +1,8 @@
 if(!oCommand.inmap)
 {
-	if(global.donegen)
+	if(oCommand.donegen)
 	{
+		show_debug_message(global.doordown2)
 		if(global.doorup2)
 		{
 			x = oCommand.doorlocations.doordown.x
@@ -11,6 +12,7 @@ if(!oCommand.inmap)
 		{
 			x = oCommand.doorlocations.doorup.x
 			y = oCommand.doorlocations.doorup.y+64
+			show_debug_message("hiiii testing")
 		}
 		if(global.doorleft2)
 		{

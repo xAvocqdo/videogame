@@ -4,29 +4,29 @@
 if(!inmap)
 {
 	if(global.rName != "Room1" && global.rName != "rm_menu") {
-		if(global.generated)
+		if(generated && !donegen)
 		{
 			if(doorlocations.doorup.exists)
 			{
-				doorlocations.doorup.x = global.doorids.doorup.x
-				doorlocations.doorup.y = global.doorids.doorup.y
+				doorlocations.doorup.x = doorids.doorup.x
+				doorlocations.doorup.y = doorids.doorup.y
 			}
 			if(doorlocations.doordown.exists)
 			{
-				doorlocations.doordown.x = global.doorids.doordown.x	
-				doorlocations.doordown.y = global.doorids.doordown.y
+				doorlocations.doordown.x = doorids.doordown.x	
+				doorlocations.doordown.y = doorids.doordown.y
 			}
 			if(doorlocations.doorleft.exists)
 			{
-				doorlocations.doorleft.x = global.doorids.doorleft.x
-				doorlocations.doorleft.y = global.doorids.doorleft.y	
+				doorlocations.doorleft.x = doorids.doorleft.x
+				doorlocations.doorleft.y = doorids.doorleft.y	
 			}
 			if(doorlocations.doorright.exists)
 			{
-				doorlocations.doorright.x = global.doorids.doorright.x
-				doorlocations.doorright.y = global.doorids.doorright.y
+				doorlocations.doorright.x = doorids.doorright.x
+				doorlocations.doorright.y = doorids.doorright.y
 			}
+			donegen = true
 		}
 	}
-	global.donegen = true
-} else {inmap = true}
+} 

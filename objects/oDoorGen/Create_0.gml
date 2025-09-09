@@ -70,7 +70,7 @@ if(ermup)
 	 // check if gen is on a tile and if theres a path tile beneath it
 	if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
 	{
-		global.doorids.doorup = instance_create_depth(x,highest_y,-1,oDoorUp)
+		oCommand.doorids.doorup = instance_create_depth(x,highest_y,-1,oDoorUp)
 		up = true
 	} else{
 		for(i = 0; i < 999; i++) // loop until previous condition is met
@@ -79,7 +79,7 @@ if(ermup)
 			if(!place_free(x,highest_y) && place_meeting(x,highest_y+64,oTile))
 			{
 
-				global.doorids.doorup = instance_create_depth(x,highest_y,-1,oDoorUp) //door gets generated
+				oCommand.doorids.doorup = instance_create_depth(x,highest_y,-1,oDoorUp) //door gets generated
 				up = true		
 				break
 			}
@@ -95,7 +95,7 @@ if(ermdown)
 
 	if(!place_free(x,lowest_y) && place_meeting(x,lowest_y-64,oTile))
 	{
-		global.doorids.doordown = instance_create_depth(x,lowest_y,-1,oDoorDown)
+		oCommand.doorids.doordown = instance_create_depth(x,lowest_y,-1,oDoorDown)
 		down = true
 	} else{
 		for(i = 0; i < 999; i++)
@@ -103,7 +103,7 @@ if(ermdown)
 			x+=64
 			if(!place_free(x,lowest_y) && place_meeting(x,lowest_y-64,oTile))
 			{
-				global.doorids.doordown = instance_create_depth(x,lowest_y,-1,oDoorDown)
+				oCommand.doorids.doordown = instance_create_depth(x,lowest_y,-1,oDoorDown)
 				down = true		
 				break
 			}
@@ -119,7 +119,7 @@ if(ermleft)
 
 	if(!place_free(left_x,y) && place_meeting(left_x+64,y,oTile))
 	{
-		global.doorids.doorleft = instance_create_depth(left_x,y,-1,oDoorLeft)
+		oCommand.doorids.doorleft = instance_create_depth(left_x,y,-1,oDoorLeft)
 		left = true
 	} else{
 		for(i = 0; i < 999; i++)
@@ -127,7 +127,7 @@ if(ermleft)
 			y+=64
 			if(!place_free(left_x,y) && place_meeting(left_x+64,y,oTile))
 			{
-				global.doorids.doorleft = instance_create_depth(left_x,y,-1,oDoorLeft)
+				oCommand.doorids.doorleft = instance_create_depth(left_x,y,-1,oDoorLeft)
 				left = true		
 				break
 			}
@@ -142,7 +142,7 @@ if(ermright)
 
 	if(!place_free(right_x,y) && place_meeting(right_x-64,y,oTile))
 	{
-		global.doorids.doorright = instance_create_depth(right_x,y,-1,oDoorRight)
+		oCommand.doorids.doorright = instance_create_depth(right_x,y,-1,oDoorRight)
 		right = true
 	} else{
 		for(i = 0; i < 999; i++)
@@ -150,7 +150,7 @@ if(ermright)
 			y+=64
 			if(!place_free(right_x,y) && place_meeting(right_x-64,y,oTile))
 			{
-				global.doorids.doorright = instance_create_depth(right_x,y,-1,oDoorRight)
+				oCommand.doorids.doorright = instance_create_depth(right_x,y,-1,oDoorRight)
 				right = true		
 				break
 			}
@@ -204,7 +204,6 @@ oGame.player.y = global.spawny
 // delete doorgen after all doors in a room are made
 if(up && down && left && right)
 {
-	global.generated = true
-    global.doorgen = true
+	oCommand.generated = true
 	instance_destroy()
 }

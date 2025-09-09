@@ -4,9 +4,9 @@ inF = false
 saved_seed = oGame.seed
 inmap = false
 global.current_room = undefined
-global.generated = false
-global.donegen = false
-global.doorids = 
+generated = false
+donegen = false
+doorids = 
 {
 	doorup: undefined,
 	doordown: undefined,
