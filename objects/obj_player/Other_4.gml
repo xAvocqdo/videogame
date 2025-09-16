@@ -1,5 +1,6 @@
 if(!global.inmap)
 {
+	oStack.playerturn = true
 	if(oCommand.donegen)
 	{
 		if(global.doorup2)
@@ -26,4 +27,4 @@ if(!global.inmap)
 		x = oGame.player.x
 		y = oGame.player.y
 	}
-} 
+} else {global.inmap = false}

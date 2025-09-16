@@ -6,6 +6,10 @@ global.inmap = false
 global.current_room = undefined
 generated = false
 donegen = false
+topleft = [ undefined, undefined ]
+bottomright = [undefined, undefined]
+room_mp_grid = undefined 
+
 doorids = 
 {
 	doorup: undefined,

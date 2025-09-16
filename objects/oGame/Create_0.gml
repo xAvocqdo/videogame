@@ -2,6 +2,7 @@
 // You can write your code in this editor
 randomize()
 seed = random_get_seed()
+global.turncount = 0
 global.doordown = false
 global.doorup = false
 global.doorleft = false

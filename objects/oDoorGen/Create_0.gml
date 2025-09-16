@@ -61,7 +61,8 @@ with(oWall)
 }
 x=left_x
 y=highest_y
-
+oCommand.topleft = [ left_x, highest_y ] 
+oCommand.bottomright = [ right_x, lowest_y ]
 //Generate up door
 if(ermup)
 {
@@ -200,6 +201,10 @@ if(global.doorright2)
 
 oGame.player.x = global.spawnx
 oGame.player.y = global.spawny
+
+//create room's mp_grid
+oCommand.room_mp_grid = mp_grid_create(left_x, highest_y, (right_x+64-left_x)/64, (lowest_y+64-highest_y)/64, 64, 64)
+mp_grid_add_instances(oCommand.room_mp_grid, oWall, true);
 
 // delete doorgen after all doors in a room are made
 if(up && down && left && right)

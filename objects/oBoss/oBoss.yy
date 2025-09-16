@@ -6,8 +6,8 @@
   "name":"oBoss",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"mapelements",
+    "path":"folders/Objects/mapelements.yy",
   },
   "parentObjectId":null,
   "persistent":false,

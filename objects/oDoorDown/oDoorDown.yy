@@ -8,8 +8,8 @@
   "name":"oDoorDown",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"roomtiles",
+    "path":"folders/Objects/roomtiles.yy",
   },
   "parentObjectId":{
     "name":"oDoorParent",

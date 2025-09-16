@@ -9,8 +9,8 @@
   "name":"oDoorParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"roomtiles",
+    "path":"folders/Objects/roomtiles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

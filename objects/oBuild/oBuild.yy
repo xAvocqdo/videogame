@@ -10,8 +10,8 @@
   "name":"oBuild",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"generation",
+    "path":"folders/Objects/generation.yy",
   },
   "parentObjectId":null,
   "persistent":false,

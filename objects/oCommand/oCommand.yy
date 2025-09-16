@@ -17,8 +17,8 @@
   "name":"oCommand",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"constants",
+    "path":"folders/Objects/constants.yy",
   },
   "parentObjectId":null,
   "persistent":false,
