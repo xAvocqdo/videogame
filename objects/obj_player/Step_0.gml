@@ -1,6 +1,5 @@
 /// @description Move
 
-
 if(oStack.playerturn)
 {
 	if (keyboard_check(ord("W")))
